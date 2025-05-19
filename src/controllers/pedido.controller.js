@@ -1,13 +1,11 @@
 const Pedido = require('../models/pedido.model');
 
-const crearPedido = async (req, res) => {
+exports.listarPedidos = async (req, res) => {
   try {
-    const nuevoPedido = new Pedido(req.body);
-    const pedidoGuardado = await nuevoPedido.save();
-    res.status(201).json(pedidoGuardado);
-  } catch (err) {
-    res.status(500).json({ mensaje: 'Error al crear pedido', error: err });
+    const pedidos = await Pedido.find();
+    res.json(pedidos);
+  } catch (error) {
+    res.status(500).json({ error: 'Error al listar los pedidos' });
   }
 };
 
-module.exports = { crearPedido };

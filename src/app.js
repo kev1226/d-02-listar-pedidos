@@ -13,5 +13,5 @@ mongoose.connect(process.env.MONGO_URI)
   .catch(err => console.error('Error en conexión MongoDB:', err));
 
 app.listen(process.env.PORT, () => {
-  console.log(`Microservicio CREAR PEDIDO en puerto ${process.env.PORT}`);
+  console.log(`Microservicio LISTAR PEDIDOS en puerto ${process.env.PORT}`);
 });

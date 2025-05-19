@@ -14,7 +14,7 @@ RUN npm install
 COPY . .
 
 # Expone el puerto del contenedor
-EXPOSE 3000
+EXPOSE 3001
 
 # Comando por defecto al arrancar el contenedor
 CMD ["npm", "start"]

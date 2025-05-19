@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const PedidoSchema = new mongoose.Schema({
+const pedidoSchema = new mongoose.Schema({
   producto: String,
   cantidad: Number,
   cliente: String,
@@ -10,4 +10,4 @@ const PedidoSchema = new mongoose.Schema({
   }
 });
 
-module.exports = mongoose.model('Pedido', PedidoSchema);
+module.exports = mongoose.model('Pedido', pedidoSchema);
