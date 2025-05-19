@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Listar Pedidos</title>
+</head>
+<body>
+  <h1>Lista de Pedidos</h1>
+  <button onclick="listarPedidos()">Cargar Pedidos</button>
+  <ul id="lista"></ul>
+
+  <script>
+    async function listarPedidos() {
+      const res = await fetch('/api/pedidos');
+      const pedidos = await res.json();
+      const lista = document.getElementById('lista');
+      lista.innerHTML = '';
+      pedidos.forEach(p => {
+        const li = document.createElement('li');
+        li.textContent = `${p.producto} (${p.cantidad}) - Cliente: ${p.cliente}`;
+        lista.appendChild(li);
+      });
+    }
+  </script>
+</body>
+</html>
